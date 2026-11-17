@@ -1,0 +1,104 @@
+/* Taste of Boudha & Sherpa Bar. Colours: edit the variables below. */
+:root{--ink:#14213d;--blue:#1f4fa3;--sun:#e9a420;--p:#f5f7fa;--mist:#dde4ee;--t:#1b2230;--mut:#566074}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+html.open,html.open body{overflow:hidden}
+body{font:400 1rem/1.65 Figtree,system-ui,sans-serif;color:var(--t);background:var(--p)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--blue)}
+h1,h2,h3,.logo{font-family:Fraunces,Georgia,serif;line-height:1.15;color:var(--ink)}
+h1{font-size:clamp(2.1rem,7vw,3.6rem)}
+h2{font-size:clamp(1.6rem,4.5vw,2.3rem);margin-bottom:.6rem}
+h3{font-size:1.2rem}
+p+p{margin-top:.8rem}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.w{max-width:1080px;margin:auto;padding:0 1.1rem}
+.s{padding:3.5rem 0}
+.btn{display:inline-block;padding:.75rem 1.3rem;min-height:44px;border-radius:999px;background:var(--sun);color:var(--ink);font:700 1rem Figtree,sans-serif;text-decoration:none;text-align:center;border:2px solid var(--sun);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.o{background:none;color:inherit;border-color:currentColor}
+.btn.g{background:#128c4a;border-color:#128c4a;color:#fff}
+.row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+/* Header and navigation: mobile first */
+.hd{position:sticky;top:0;z-index:50;background:var(--p);border-bottom:1px solid var(--mist)}
+.hd .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{position:relative;z-index:2;font-weight:700;font-size:1.15rem;text-decoration:none;transition:color .3s}
+.logo small{display:block;font:500 .72rem Figtree,sans-serif;color:var(--mut)}
+.burger{position:relative;z-index:2;width:44px;height:44px;border:0;background:none;cursor:pointer}
+.burger i{position:absolute;left:10px;right:10px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s,opacity .2s,background .3s}
+.burger i:nth-child(1){top:15px}.burger i:nth-child(2){top:21px}.burger i:nth-child(3){top:27px}
+.open .burger i{background:#fff}
+.open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.open .burger i:nth-child(2){opacity:0}
+.open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.open .logo,.open .logo small{color:#fff}
+.nav{position:fixed;inset:0;display:flex;flex-direction:column;justify-content:center;padding:5rem 1.6rem 2rem;background:var(--ink);transform:translateX(100%);visibility:hidden;transition:transform .35s ease,visibility 0s .35s}
+.open .nav{transform:none;visibility:visible;transition:transform .35s ease}
+.nav a:not(.btn){color:#fff;text-decoration:none;font:600 1.9rem Fraunces,Georgia,serif;padding:.45rem 0;border-bottom:1px solid #ffffff22}
+.nav a[aria-current]{color:var(--sun)!important}
+.nav .btn{margin-top:1.4rem}
+@media(min-width:900px){
+.burger{display:none}
+.nav{position:static;flex-direction:row;align-items:center;gap:1.6rem;padding:0;background:none;transform:none;visibility:visible;transition:none}
+.nav a:not(.btn){color:var(--ink);font:500 .98rem Figtree,sans-serif;border:0;padding:.3rem 0}
+.nav a[aria-current]{color:var(--ink)!important;box-shadow:0 3px 0 var(--sun)}
+.nav .btn{margin:0;padding:.5rem 1.1rem;min-height:40px}}
+/* Hero with a ridgeline edge that echoes the mural */
+.hero{background:var(--ink);color:#fff;padding:2.5rem 0 6rem;clip-path:polygon(0 0,100% 0,100% 93%,84% 98%,68% 92%,50% 99%,33% 91%,16% 97%,0 92%)}
+.hero .w{display:grid;gap:2rem;align-items:center}
+.hero h1{color:#fff;animation:up .8s ease both}
+.hero p{color:#d5dcea;max-width:34em;margin-top:1rem}
+.hero img{width:100%;max-height:520px;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+@keyframes up{from{opacity:0;transform:translateY(16px)}}
+@media(min-width:900px){.hero{padding:4rem 0 7rem}.hero .w:has(img){grid-template-columns:1.1fr .9fr;gap:3rem}}
+.two{display:grid;gap:1.6rem;align-items:center}
+.two img{width:100%;border-radius:6px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1fr;gap:3rem}}
+.strip{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 1.1rem 1rem;margin:1.2rem auto 0;max-width:1080px}
+.strip figure{flex:0 0 min(68%,250px);scroll-snap-align:start}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+figcaption{margin-top:.4rem;font-size:.92rem;color:var(--mut)}
+.feat{display:grid;gap:1.4rem;margin-top:1.4rem}
+.feat div{border-left:3px solid var(--sun);padding-left:1rem}
+@media(min-width:800px){.feat{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.band{background:var(--blue);color:#fff;text-align:center}.band h2{color:#fff}
+.map{width:100%;height:320px;border:0;border-radius:6px;background:var(--mist)}
+details{border-bottom:1px solid var(--mist);padding:.9rem 0}
+summary{cursor:pointer;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right}details[open] summary::after{content:"\2013"}
+details p{margin-top:.5rem}
+/* Menu */
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding:.7rem 1.1rem;position:sticky;top:64px;z-index:40;background:var(--p);border-bottom:1px solid var(--mist)}
+.chips a{flex:none;padding:.4rem .9rem;border:1px solid #9aa6bb;border-radius:99px;color:var(--ink);font-size:.92rem;text-decoration:none}
+.mg{display:grid;gap:2rem}
+@media(min-width:800px){.mg{grid-template-columns:1fr 1fr;gap:2.5rem 3.5rem}}
+.mg section{scroll-margin-top:130px}
+.mg h2{font-size:1.5rem;padding-bottom:.3rem;border-bottom:2px solid var(--ink)}
+.mg ul{list-style:none;padding:0}
+.mg li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--mist)}
+.mg li span{display:block;font-size:.88rem;color:var(--mut)}
+.mg b{font-weight:600}
+.mg em{font-style:normal;font-weight:700;color:var(--blue);white-space:nowrap}
+.mg em::before{content:"NPR "}
+/* Gallery */
+.gal{columns:2;gap:.6rem}
+@media(min-width:800px){.gal{columns:3;gap:.9rem}}
+.gal button{display:block;width:100%;margin-bottom:.6rem;padding:0;border:0;background:none;border-radius:6px;overflow:hidden;cursor:zoom-in}
+dialog{max-width:94vw;max-height:94vh;padding:0;border:0;background:none}
+dialog::backdrop{background:#000d}
+dialog img{margin:auto;max-height:84vh;border-radius:6px}
+dialog .btn{display:block;margin:.7rem auto 0}
+/* Contact */
+.cg{display:grid;gap:2rem}
+@media(min-width:800px){.cg{grid-template-columns:1fr 1fr;gap:3rem}}
+.info dt{margin-top:1rem;font-weight:700}.info dd{margin:0}
+form label{display:block;margin-top:1rem;font-weight:600}
+form input,form textarea{width:100%;margin-top:.3rem;padding:.7rem;font:inherit;border:1px solid #9aa6bb;border-radius:6px;background:#fff}
+/* Footer and floating WhatsApp */
+.ft{padding:2.5rem 0 5rem;background:var(--ink);color:#c5cee0;font-size:.95rem}
+.ft a{color:#fff;display:inline-block;margin-right:.9rem;padding:.2rem 0}
+.ft .w{display:grid;gap:1.4rem}
+@media(min-width:800px){.ft .w{grid-template-columns:2fr 1.4fr 1fr}}
+.wa{position:fixed;z-index:40;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));box-shadow:0 4px 14px #0004}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
